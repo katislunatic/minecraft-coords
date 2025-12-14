@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minecraft Coordinate Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Minecraft Coordinate Converter</h1>
+
+  <div class="inputs">
+    <input type="number" id="x" placeholder="X">
+    <input type="number" id="y" placeholder="Y">
+    <input type="number" id="z" placeholder="Z">
+  </div>
+
+  <div class="selectors">
+    <select id="from">
+      <option>Overworld</option>
+      <option>Nether</option>
+      <option>End</option>
+    </select>
+
+    <span>→</span>
+
+    <select id="to">
+      <option>Overworld</option>
+      <option>Nether</option>
+      <option>End</option>
+    </select>
+  </div>
+
+  <button onclick="convert()">Convert</button>
+
+  <div class="output" id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
