@@ -7,10 +7,14 @@ function convert() {
   let to = document.getElementById("to").value;
 
   if (from !== to) {
+    // Overworld / End → Nether
     if ((from === "Overworld" || from === "End") && to === "Nether") {
       x /= 8;
       z /= 8;
-    } else if (from === "Nether" && (to === "Overworld" || to === "End")) {
+    }
+
+    // Nether → Overworld / End
+    else if (from === "Nether" && (to === "Overworld" || to === "End")) {
       x *= 8;
       z *= 8;
     }
