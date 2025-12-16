@@ -1,9 +1,18 @@
+/* ===== Global Reset & Mobile Zoom Control ===== */
 * {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  touch-action: manipulation;        /* Prevent double-tap zoom */
+  overscroll-behavior: none;
+}
+
+/* ===== Page Background ===== */
+body {
   background: radial-gradient(circle at top, #1f2933, #0b0f14);
   font-family: 'Minecraftia', monospace;
   display: flex;
@@ -14,7 +23,7 @@ body {
   padding: 16px;
 }
 
-/* Card */
+/* ===== Main Card ===== */
 .card {
   background: #1c1c1c;
   border: 4px solid #3a3a3a;
@@ -26,7 +35,7 @@ body {
   text-align: center;
 }
 
-/* Titles */
+/* ===== Titles ===== */
 h1 {
   font-size: 16px;
   margin-bottom: 4px;
@@ -38,7 +47,7 @@ h1 {
   margin-bottom: 16px;
 }
 
-/* Coordinate Inputs */
+/* ===== Coordinate Inputs ===== */
 .coords {
   display: flex;
   gap: 8px;
@@ -60,7 +69,7 @@ h1 {
   border-color: #22c55e;
 }
 
-/* Dimension Select */
+/* ===== Dimension Selectors ===== */
 .dimensions {
   display: flex;
   align-items: center;
@@ -79,11 +88,16 @@ select {
   font-size: 10px;
 }
 
+select:focus {
+  outline: none;
+  border-color: #22c55e;
+}
+
 .arrow {
   font-size: 14px;
 }
 
-/* Button */
+/* ===== Convert Button ===== */
 button {
   margin-top: 12px;
   padding: 14px;
@@ -96,11 +110,15 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  filter: brightness(1.1);
+}
+
 button:active {
   transform: translateY(1px);
 }
 
-/* Result */
+/* ===== Result Box ===== */
 .result {
   margin-top: 14px;
   padding: 12px;
@@ -111,7 +129,7 @@ button:active {
   min-height: 32px;
 }
 
-/* Desktop */
+/* ===== Desktop Enhancements ===== */
 @media (min-width: 640px) {
   h1 {
     font-size: 18px;
@@ -123,5 +141,9 @@ button:active {
 
   button {
     font-size: 14px;
+  }
+
+  .result {
+    font-size: 12px;
   }
 }
