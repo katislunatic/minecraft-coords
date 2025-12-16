@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Minecraft Coordinate Converter</title>
 
-  <!-- Lock zoom as much as iOS allows -->
+  <!-- Lock zoom on mobile -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -23,9 +23,14 @@
     <p class="subtitle">Overworld • Nether • End</p>
 
     <div class="coords">
-      <input type="number" id="x" placeholder="X">
-      <input type="number" id="y" placeholder="Y">
-      <input type="number" id="z" placeholder="Z">
+      <div class="row">
+        <input type="number" id="x" placeholder="X">
+        <input type="number" id="y" placeholder="Y">
+      </div>
+
+      <div class="row center">
+        <input type="number" id="z" placeholder="Z">
+      </div>
     </div>
 
     <div class="dimensions">
@@ -49,7 +54,6 @@
     <div class="result" id="result">—</div>
   </div>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
