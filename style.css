@@ -61,15 +61,17 @@ h1 {
 
 .coords input {
   flex: 1;
-  height: 44px;          /* FIX: force equal height */
-  line-height: 44px;     /* FIX: vertical centering */
-  padding: 0;            /* FIX: remove font offset */
+  height: 44px;
+  padding-top: 2px;          /* FIX: font baseline compensation */
+  padding-bottom: 0;
   background: #111;
   border: 3px solid #3a3a3a;
   color: #a7f3d0;
   font-family: inherit;
   font-size: 12px;
   text-align: center;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .coords input:focus {
