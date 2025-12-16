@@ -6,31 +6,16 @@ function convert() {
   let from = document.getElementById("from").value;
   let to = document.getElementById("to").value;
 
-  if (from === to) {
-    result(x, y, z);
-    return;
+  if (from !== to) {
+    if ((from === "Overworld" || from === "End") && to === "Nether") {
+      x /= 8;
+      z /= 8;
+    } else if (from === "Nether" && (to === "Overworld" || to === "End")) {
+      x *= 8;
+      z *= 8;
+    }
   }
 
-  // Nether scaling rules
-  if (from === "Overworld" && to === "Nether") {
-    x /= 8;
-    z /= 8;
-  } else if (from === "Nether" && to === "Overworld") {
-    x *= 8;
-    z *= 8;
-  } else if (from === "Nether" && to === "End") {
-    x *= 8;
-    z *= 8;
-  } else if (from === "End" && to === "Nether") {
-    x /= 8;
-    z /= 8;
-  }
-  // Overworld ↔ End = no change
-
-  result(x, y, z);
-}
-
-function result(x, y, z) {
   document.getElementById("result").innerText =
-    `Converted Coords: ${Math.round(x)}, ${y}, ${Math.round(z)}`;
+    `X: ${Math.round(x)}  Y: ${y}  Z: ${Math.round(z)}`;
 }
