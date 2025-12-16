@@ -59,7 +59,7 @@ h1 {
   gap: 8px;
 }
 
-.coords .row input {
+.coords input {
   flex: 1;
   padding: 12px 0;
   background: #111;
@@ -70,18 +70,18 @@ h1 {
   text-align: center;
 }
 
-.coords .row input:focus {
+.coords input:focus {
   outline: none;
   border-color: #22c55e;
 }
 
-/* Center Z input */
-.coords .row.center {
+/* Z centered under X & Y */
+.z-row {
   justify-content: center;
 }
 
-.coords .row.center input {
-  max-width: 50%;
+.z-row input {
+  width: 50%;
 }
 
 /* ===== Dimension Selectors ===== */
@@ -150,7 +150,7 @@ button:active {
     font-size: 18px;
   }
 
-  .coords .row input {
+  .coords input {
     font-size: 14px;
   }
 
