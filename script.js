@@ -1,3 +1,4 @@
+// ===== Coordinate Conversion =====
 function convert() {
   let x = Number(document.getElementById("x").value);
   let y = Number(document.getElementById("y").value);
@@ -23,3 +24,28 @@ function convert() {
   document.getElementById("result").innerText =
     `X: ${Math.round(x)}  Y: ${y}  Z: ${Math.round(z)}`;
 }
+
+// ===== iOS Zoom Prevention =====
+
+// Prevent pinch zoom
+document.addEventListener("gesturestart", function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener("gesturechange", function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener("gestureend", function (e) {
+  e.preventDefault();
+});
+
+// Prevent double-tap zoom
+let lastTouchEnd = 0;
+document.addEventListener("touchend", function (event) {
+  const now = Date.now();
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
