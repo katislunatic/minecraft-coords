@@ -7,7 +7,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  touch-action: manipulation;        /* Prevent double-tap zoom */
+  touch-action: manipulation;
   overscroll-behavior: none;
 }
 
@@ -50,10 +50,16 @@ h1 {
 /* ===== Coordinate Inputs ===== */
 .coords {
   display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
-.coords input {
+.coords .row {
+  display: flex;
+  gap: 8px;
+}
+
+.coords .row input {
   flex: 1;
   padding: 12px 0;
   background: #111;
@@ -64,9 +70,18 @@ h1 {
   text-align: center;
 }
 
-.coords input:focus {
+.coords .row input:focus {
   outline: none;
   border-color: #22c55e;
+}
+
+/* Center Z input */
+.coords .row.center {
+  justify-content: center;
+}
+
+.coords .row.center input {
+  max-width: 50%;
 }
 
 /* ===== Dimension Selectors ===== */
@@ -135,7 +150,7 @@ button:active {
     font-size: 18px;
   }
 
-  .coords input {
+  .coords .row input {
     font-size: 14px;
   }
 
