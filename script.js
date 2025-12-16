@@ -8,14 +8,10 @@ function convert() {
   let to = document.getElementById("to").value;
 
   if (from !== to) {
-    // Overworld / End → Nether
     if ((from === "Overworld" || from === "End") && to === "Nether") {
       x /= 8;
       z /= 8;
-    }
-
-    // Nether → Overworld / End
-    else if (from === "Nether" && (to === "Overworld" || to === "End")) {
+    } else if (from === "Nether" && (to === "Overworld" || to === "End")) {
       x *= 8;
       z *= 8;
     }
@@ -26,23 +22,12 @@ function convert() {
 }
 
 // ===== iOS Zoom Prevention =====
+document.addEventListener("gesturestart", e => e.preventDefault());
+document.addEventListener("gesturechange", e => e.preventDefault());
+document.addEventListener("gestureend", e => e.preventDefault());
 
-// Prevent pinch zoom
-document.addEventListener("gesturestart", function (e) {
-  e.preventDefault();
-});
-
-document.addEventListener("gesturechange", function (e) {
-  e.preventDefault();
-});
-
-document.addEventListener("gestureend", function (e) {
-  e.preventDefault();
-});
-
-// Prevent double-tap zoom
 let lastTouchEnd = 0;
-document.addEventListener("touchend", function (event) {
+document.addEventListener("touchend", event => {
   const now = Date.now();
   if (now - lastTouchEnd <= 300) {
     event.preventDefault();
