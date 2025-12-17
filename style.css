@@ -9,6 +9,10 @@ body {
   padding: 0;
   touch-action: manipulation;
   overscroll-behavior: none;
+
+  /* 🚫 disable page scrolling */
+  height: 100%;
+  overflow: hidden;
 }
 
 /* ===== Page Background ===== */
@@ -61,9 +65,9 @@ h1 {
 
 .coords input {
   flex: 1;
-  height: 44px;          /* FIX: force equal height */
-  line-height: 44px;     /* FIX: vertical centering */
-  padding: 0;            /* FIX: remove font offset */
+  height: 44px;         
+  line-height: 44px;    
+  padding: 0;           
   background: #111;
   border: 3px solid #3a3a3a;
   color: #a7f3d0;
